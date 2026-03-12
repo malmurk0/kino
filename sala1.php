@@ -66,6 +66,9 @@
 
 <button onclick="window.print()">Drukuj</button>
 
+<a style="background-color: #29abe2; text-decoration: none; border: solid black 2px"  href="stronaglowna.php">Strona główna</a>
+
+
 </body>
 
 
