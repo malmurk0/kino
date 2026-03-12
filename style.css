@@ -1,0 +1,179 @@
+body {
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.screen {
+    width: 500px;
+    height: 30px;
+    background-color: #29abe2;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.cinema-hall {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.row-number {
+    width: 30px;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+}
+
+.seat {
+    width: 24px;
+    height: 24px;
+    background-color: #808080;
+    color: white;
+    font-size: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px 4px 2px 2px;
+    position: relative;
+    cursor: pointer;
+}
+
+.unavailableSeat {
+    width: 24px;
+    height: 24px;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0);
+    font-size: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px 4px 2px 2px;
+    position: relative;
+    cursor: not-allowed;
+}
+
+/* Stylizacja "uszu" fotela */
+.seat::before, .seat::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    width: 4px;
+    height: 12px;
+    background-color: #808080;
+    border-radius: 2px;
+}
+.seat::before { left: -3px; }
+.seat::after { right: -3px; }
+
+.seat:hover {
+    background-color: #29abe2;
+}
+
+.inputClass {
+    position: absolute;
+    opacity: 0;
+}
+
+.spanClass {
+    display: inline-block;
+    padding: 7px;
+    cursor: pointer;
+}
+
+.inputClass:checked + .spanClass {
+    background: #5a5757;
+    border-radius: 4px 4px 2px 2px;
+}
+
+.selectedSeat {
+    background: #5a5757;
+}
+
+.selectedSeat {
+    background-color: #5a5757;
+}
+
+.selectedSeat::before,
+.selectedSeat::after {
+    background-color: #5a5757;
+}
+
+/* Specyficzne wyrównania dla rzędów */
+.row-1 { margin-bottom: 5px; }
+
+/* Ukrywamy wszystko podczas drukowania */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #print-area, #print-area * {
+        visibility: visible;
+    }
+
+    #print-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+}
+
+@media print {
+    .seat {
+        background: #ccc;
+        border: 1px solid black;
+    }
+
+    .inputClass {
+        display: none;
+    }
+
+    .inputClass:checked + .spanClass {
+        background: black;
+        color: white;
+    }
+}
+
+@media print {
+    .screen {
+        width: 100%;
+        margin-bottom: 30px;
+        font-size: 18px;
+    }
+
+    .row {
+        gap: 6px;
+    }
+
+    .seat {
+        width: 28px;
+        height: 28px;
+        font-size: 10px;
+    }
+}
+
+@media print {
+
+    .selectedSeat {
+        background: black !important;
+        color: white;
+    }
+
+}
