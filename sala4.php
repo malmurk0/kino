@@ -6,6 +6,19 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<div id="menu">
+
+    <nav>
+        <ol><a href="sala2.php">Sala2</a></ol><ol><a href="sala3.php">Sala3</a></ol><ol><a href="sala4.php">Sala4</a></ol>
+
+    </nav>
+
+</div>
+
+
+
+
+
 
 <div class="screen">Ekran</div>
 <div class="cinema-hall">
